@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification Code</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background-color: #f8fafc;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    .header {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: #ffffff;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .header-icon {
+      font-size: 64px;
+      color: #fbbf24;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .content {
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .otp-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 4px solid #3b82f6;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin: 30px 0;
+      box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+    }
+    .otp-label {
+      color: #1e40af;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .otp-code {
+      font-size: 56px;
+      font-weight: 800;
+      color: #1e40af;
+      letter-spacing: 16px;
+      font-family: 'Courier New', monospace;
+      margin: 10px 0;
+      text-shadow: 2px 2px 4px rgba(30, 64, 175, 0.1);
+    }
+    .expiry-notice {
+      display: inline-block;
+      background-color: #fef3c7;
+      color: #92400e;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 20px 0;
+      border: 2px solid #fbbf24;
+    }
+    .expiry-notice i {
+      color: #f59e0b;
+      margin-right: 8px;
+    }
+    .warning-box {
+      background-color: #fef2f2;
+      border-left: 4px solid #ef4444;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: left;
+      border-radius: 0 8px 8px 0;
+    }
+    .warning-box strong {
+      color: #dc2626;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .footer {
+      background-color: #1e40af;
+      padding: 30px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 14px;
+    }
+    @media only screen and (max-width: 600px) {
+      .content {
+        padding: 30px 20px;
+      }
+      .otp-code {
+        font-size: 42px;
+        letter-spacing: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-icon">
+        <i class="bi bi-shield-lock"></i>
+      </div>
+      <h1>Verification Code</h1>
+    </div>
+    
+    <div class="content">
+      <p style="font-size: 18px; margin-top: 0; color: #475569;">You requested to <strong style="color: #1e40af;">{{purpose}}</strong>. Use the code below to continue:</p>
+      
+      <div class="otp-box">
+        <div class="otp-label">
+          <i class="bi bi-key-fill"></i> Your Verification Code
+        </div>
+        <div class="otp-code">{{otpCode}}</div>
+      </div>
+      
+      <div class="expiry-notice">
+        <i class="bi bi-clock-fill"></i>
+        This code will expire in <strong>{{expiryMinutes}} minutes</strong>
+      </div>
+      
+      <div class="warning-box">
+        <strong>
+          <i class="bi bi-exclamation-triangle-fill"></i> Security Notice
+        </strong>
+        <p style="margin: 0; font-size: 14px; color: #475569;">
+          Never share this code with anyone. AGM Store Builder will never ask you for this code via phone or email. If you didn't request this code, please ignore this email.
+        </p>
+      </div>
+      
+      <p style="color: #64748b; font-size: 14px;">If you have any concerns, contact our support team at <a href="mailto:{{supportEmail}}" style="color: #3b82f6; font-weight: 600;">{{supportEmail}}</a></p>
+    </div>
+    
+    <div class="footer">
+      <p style="margin-bottom: 10px;">&copy; {{year}} AGM Store Builder. All rights reserved.</p>
+      <p style="color: #93c5fd; font-size: 12px; margin-top: 20px;">
+        This is an automated security email from AGM Store Builder.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
